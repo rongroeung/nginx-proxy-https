@@ -39,7 +39,7 @@ systemctl status nginx
 ```
 server {
     listen 7002 ssl;
-    server_name crossroadscambodia.church;
+    server_name crossroadscambodia.org;
 
     ssl_certificate /opt/https-httpd/fullchain.pem;
     ssl_certificate_key /opt/https-httpd/privkey.pem;
@@ -54,7 +54,7 @@ server {
 }
 ```
 #### >>> Replace `7002` with your desired https port.
-#### >>> Replace `crossroadscambodia.church` with your actual domain name.
+#### >>> Replace `crossroadscambodia.org` with your actual domain name.
 #### >>> Replace `http://192.168.10.111:7001` with your actual service url.
 #### >>> Update `/opt/https-httpd/fullchain.pem` and `/opt/https-httpd/privkey.pem` with the paths to your SSL certificate and key files.
 #### >>> If you don't have SSL certificates, you may generate using this guideline: `https://github.com/rongroeung/apache-httpd-https?tab=readme-ov-file#i-generate-ssltls-certificate`
@@ -73,6 +73,6 @@ systemctl restart nginx
 ```
 
 ### 4. Access Your Internal Service via HTTPS Web Proxy (Nginx)
-#### >>> You should now be able to access your internal service through Nginx using HTTPS. Visit `https://crossroadscambodia.church:7002` in a web browser, and Nginx will proxy the requests to your internal service running at `http://192.168.10.111:7001`.
+#### >>> You should now be able to access your internal service through Nginx using HTTPS. Visit `https://crossroadscambodia.org:7002` in a web browser, and Nginx will proxy the requests to your internal service running at `http://192.168.10.111:7001`.
 #### >>> Ensure your internal service is running and accessible at `http://192.168.10.111:7001`, and your SSL certificates are correctly configured in Nginx.
-#### >>> By following these steps, you can configure Nginx to proxy HTTPS requests to your internal service running on `https://crossroadscambodia.church:7002`.
+#### >>> By following these steps, you can configure Nginx to proxy HTTPS requests to your internal service running on `https://crossroadscambodia.org:7002`.
